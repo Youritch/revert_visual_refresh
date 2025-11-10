@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 /* should be use with VencordStuff/css/GuildbarRevert.css
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
 */
 :root {
-    /*--button-secondary-background: #414141 !important;*/
     --bg-color-dark: #1e1f22;
     --custom-app-top-bar-height: 0px;
+    /*old --background-code :*/
+    --bg-embed: color-mix(in oklab, hsl(234.935 calc(1*85.556%) 64.706% /0.0784313725490196) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.0784313725490196) var(--custom-theme-base-color-amount, 0%));
+    --background-code: var(--background-surface-high);
+    --background-message-hover: linear-gradient(90deg,var(--bg-embed),transparent);
 }
 /* switch button settings*/
 .vc-switch-container {
@@ -19,7 +23,7 @@
 [class*="bar_c38106"] {
     background-color: var(--bg-color-dark) !important;
 }
-/**/
+/*change the color of the guilds list background*/
 [class*="sidebar__5e434"] {
     background-color: var(--bg-color-dark) !important;
 }
@@ -27,6 +31,22 @@
 [class*="sidebar__5e434"]::after {
     /*height: 0px;*/
     opacity: 0;
+}
+
+
+/*Embed*/
+article[class*="embed__623de"] {
+    background-color: var(--bg-embed);
+}
+
+/*Usernames*/
+span[class*="username_c19a55"] {
+    font-size: 18px;
+}
+
+/*le titre en haut (nom du serveur)*/
+div[class*="title_edbb22"]{
+    display: none;
 }
 
 [class*="base__5e343"]::after {
@@ -44,12 +64,13 @@ nav[class*="guilds__5e434"] {
     );
 }
 
-/*change the police*/
+/*change the police for all text*/
 body {
     font-family: "Nunito" !important;
 }
 
-/*@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/*Codeblock*/
 code {
     font-family: "JetBrains Mono";
-}*/
+    font-weight: 200;
+}
