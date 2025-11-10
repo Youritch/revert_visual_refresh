@@ -9,7 +9,7 @@
     /*old --background-code :*/
     --bg-embed: color-mix(in oklab, hsl(234.935 calc(1*85.556%) 64.706% /0.0784313725490196) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.0784313725490196) var(--custom-theme-base-color-amount, 0%));
     --background-code: var(--background-surface-high);
-    --background-message-hover: linear-gradient(90deg,var(--bg-embed),transparent);
+    --background-message-hover: linear-gradient(90deg,var(--info-box-background),transparent,transparent,transparent,transparent);
 }
 /* switch button settings*/
 .vc-switch-container {
@@ -31,6 +31,23 @@
 [class*="sidebar__5e434"]::after {
     /*height: 0px;*/
     opacity: 0;
+}
+
+/* message on hover (add a bar on the left, like mentioned msg)*/
+div[class*="message__5126c"]:hover::before{
+    bottom: 0;
+    content: "";
+    display: block;
+    inset-inline-start: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    background-color: var(--info-help-foreground);
+}
+/* message on hover when mentioned*/
+div[class*="mentioned__5126c"]:hover{
+    background-color: var(--info-box-background) !important;
 }
 
 
