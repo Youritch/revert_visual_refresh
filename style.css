@@ -49,6 +49,22 @@ div[class*="message__5126c"]:hover::before{
 div[class*="mentioned__5126c"]:hover{
     background-color: var(--info-box-background) !important;
 }
+/* message on selected (add a bar on the left, like mentioned msg)*/
+div[class*="selected__5126c"]:before{
+    bottom: 0;
+    content: "";
+    display: block;
+    inset-inline-start: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    background-color: var(--info-help-foreground);
+}
+/* message on selected*/
+div[class*="selected__5126c"]{
+    background-color: var(--info-box-background) !important;
+}
 
 
 /*Embed*/
